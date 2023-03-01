@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="title1">
+        <h1>PESU Student's Job Portal</h1>
+    </div>
+    <div class="org">
+
+        <div class="logo">
+           <img src="logo.png" alt=""> 
+        </div>
+        <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/st">Student</a></li>
+            <li><a href="/l">Lecturer</a></li>
+            <li><a href="/j">Jobs</a></li>
+
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div>
+            <h1>Welcome {{username}}
+            <a href = "{{url_for('logout')}}">Logout</a></h1>
+        </div>
+        <div><h2>Job Posted Successfully</h2></div>
+        <a href = "/pj"><button class="button-9" role="button" >Post Job</button></a>
+        <button class="button-9" role="button">Applied Jobs</button>
+    </div>
+    <!-- HTML !-->
+
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Century Gothic;
+    }
+    
+    
+    .org ul{
+        position: absolute;
+        float: right;
+        top: 20%;
+        right: 5%;
+        list-style-type: none;
+        margin-top: 25px;
+    }
+    
+    .org ul li{
+        display: inline-block;
+    }
+    ul li a{
+        text-decoration: none;
+        color: black;
+        padding: 5px 20px;
+        border: 1px solid black;
+    }
+    
+    .org ul li a:hover{
+        background-color: black;
+        color: aqua;
+        transition: 0.6s ease;
+    }
+    
+    .org ul li.active a{
+        background-color: black;
+        color: aqua;
+    }
+    
+    .org .logo img{
+        float: left;
+        position: absolute;
+        top: 5%;
+        left: 10%;
+        width: 200px;
+        height: auto;
+    }
+    
+    
+     .title1{
+        font-size: xx-large;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        
+        transform: translate(-50%,-50%);
+    }
+    
+    .org{
+        left: 10%;
+        right: 10%;
+    } 
+.org .button-9 {
+   
+    left: 30%;
+    
+   top: 20pc;
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+    font-size: xx-large;
+    height: 70px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 20%;
+  }
+  
+  .button-9:disabled {
+    cursor: default;
+  }
+  
+  .button-9:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+  }
+</style>
+</body>
+</html>

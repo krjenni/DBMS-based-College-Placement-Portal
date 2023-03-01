@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" type="text/css" href="static/view.css">
+</head>
+<body>
+    <header>
+        <div class="title1">
+            <h1>PESU Student's Job Portal</h1>
+        </div>  
+        <div class="org">
+
+            <div class="logo">
+               <img src="static/logo/logo.png" alt=""> 
+            </div>
+            <ul>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/st">Student</a></li>
+                <li><a href="/l">Lecturer</a></li>
+                <li><a href="/j">Jobs</a></li>
+
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+    </header>
+    <div>
+      <h1>Welcome {{username}}
+      <a href = "{{url_for('logout')}}">Logout</a></h1>
+  </div>
+
+<div class="container">
+	
+	<div class="table">
+		<div class="table-header">
+			<div class="header__item"><a id="name" class="filter__link" href="#">SRN</a></div>
+			<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Job ID</a></div>
+			
+		</div>
+		<div class="table-content">	
+      {% for i in details1 %}
+			<div class="table-row">		
+				<div class="table-data">{{i[0]}}</div>
+				<div class="table-data">{{i[1]}}</div>
+				
+			</div>
+      {% endfor %}
+			
+		</div>	
+	</div>
+</div>
+</body>
+<style>
+    .first{
+    position:relative;
+    top: 12pc;
+    padding: 70px;
+}
+.t1{
+    font-size:4pc;
+}
+.message{
+  position:relative;
+  bottom:1pc;
+  font-size:4pc;
+
+}
+.wrapper{
+    padding: 15px;
+border-radius: 5px;
+box-shadow: 20px 20px 20px 25px rgba(0,0,0,0.1);
+}
+.org ul{
+    position: absolute;
+    float: right;
+    top: 20%;
+    right: 5%;
+    list-style-type: none;
+    margin-top: 25px;
+  }
+  
+  .org ul li{
+    display: inline-block;
+  }
+  ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 20px;
+    border: 1px solid black;
+  }
+  
+  .org ul li a:hover{
+    background-color: black;
+    color: aqua;
+    transition: 0.6s ease;
+  }
+  
+  .org ul li.active a{
+    background-color: black;
+    color: aqua;
+  }
+  
+  .org .logo img{
+    float: left;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    width: 200px;
+    height: auto;
+  }
+  
+  
+  .title1{
+    font-size: xx-large;
+    position: absolute;
+    top: 8pc;
+    left: 50%;
+    
+    transform: translate(-50%,-50%);
+  }
+  
+  .org{
+    left: 10%;
+    right: 10%;
+  }</style>
+</html>

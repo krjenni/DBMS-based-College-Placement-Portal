@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+
+      <meta charset="utf-8">
+      <div class="title1">
+        <h1>PESU Student's Job Portal</h1>
+    </div>
+    <div class="org">
+
+        <div class="logo">
+           <img src="/static/logo/logo.png" alt=""> 
+        </div>
+        <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/st">Student</a></li>
+            <li><a href="/l">Lecturer</a></li>
+            <li><a href="/j">Jobs</a></li>
+
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+      <title>Registration Form</title>
+      <link rel="stylesheet" href="static/student_style.css">
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="wrapper">
+        <div class="title-text">
+            <div class="title signup">
+               Signup 
+            </div>
+            
+         </div>
+         <div class="form-container">
+         <div class="form-inner">
+               <form method = "POST" action="/lr">
+                  <div class="field">
+                     <input type="text" name = "id" placeholder="Faculty ID" required>
+                  </div>
+                  <div class="field">
+                     <input type="text" name = "dno" placeholder="Department Number" required>
+                  </div>
+                  <div class="field">
+                     <input type="text" name = "fname" placeholder="First Name" required>
+                  </div>
+                  <div class="field">
+                     <input type="text" name = "lname" placeholder="Last Name" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" name = "password1" placeholder="Password" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Signup">
+                  </div>
+               </form>
+            </div>
+         </div>
+            
+         </div>
+      </div>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+   </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+</head>
+<body>
+  <div class = "last"><h1>Total Number of jobs: {{details3[0][0]}}<h1></div>
+    <div class = "last"><h1>Maximum CTC offered  :         {{details4[0][0]}} <h1></div>
+      <div class = "last"><h1>Minimum CGPA criteria: {{details5[0][0]}}<h1></div>
+        <div class = "last"><h1>Average CGPA criteria of all available jobs: {{details6[0][0]}}<h1></div>
+
+    <header>
+        <div class="title1">
+            <h1>PESU Student's Job Portal</h1>
+        </div>
+        <div class="org">
+
+            <div class="logo">
+               <img src="static/logo/logo.png" alt=""> 
+            </div>
+            <ul>
+                <li ><a href="/">Home</a></li>
+                <li><a href="/st">Student</a></li>
+                <li><a href="/l">Lecturer</a></li>
+                <li class="active"><a href="/j">Jobs</a></li>
+
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+    </header>
+    <div class = "first">
+    {% if details1 %} 
+    {% for e in details1 %}
+    <div class="wrapper">
+        <div class="form-container">
+                <div class="form-inner">
+                    <table>
+                      <td>
+                     <h1>Job Title:  {{e[2]}}</h1>
+                     <h2>Company id:  {{e[5]}}</h2>
+                     <h2>Job id:  {{e[0]}}</h2>
+                     <h3><b>Description:</b></h3> <div class = "t1">  {{e[1]}}</div>
+                     <h3><b>CTC:</b></h3> <div class = "t1">{{e[4]}}</div>
+                     <h3><b>Vacancy:</b></h3> <div class = "t1">{{e[3]}} </div>
+
+                     <h2><b>Eligibility: </b></h2>
+                     <h3>10th Percentage:</h3>  {{e[7]}}
+                     <h3>12th Percentage:</h3>  {{e[8]}}
+                     <h3><b>CGPA: </b></h3> <div class = "t1">  {{e[6]}}</div>
+                     <h3><b>Backlogs:</b></h3> <div class = "t1">{{e[9]}}</div>
+                      </td>
+                      <td>
+                        
+                      </td>
+                    </table>
+                </div>
+            </div>
+        </div>
+  
+    {% endfor %}
+    {% endif %}
+    </div>
+    
+</body>
+<style>
+    .first{
+        position:relative;
+        top: 12pc;
+        padding: 70px;
+    }
+    .last{
+      position:relative;
+
+      top:15pc;
+      left: 5pc;
+    }
+    .t1{
+        font-size:1.5pc;
+    }
+    .wrapper{
+        padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+    }
+    .org ul{
+        position: absolute;
+        float: right;
+        top: 20%;
+        right: 5%;
+        list-style-type: none;
+        margin-top: 25px;
+      }
+      
+      .org ul li{
+        display: inline-block;
+      }
+      ul li a{
+        text-decoration: none;
+        color: black;
+        padding: 5px 20px;
+        border: 1px solid black;
+      }
+      
+      .org ul li a:hover{
+        background-color: black;
+        color: aqua;
+        transition: 0.6s ease;
+      }
+      
+      .org ul li.active a{
+        background-color: black;
+        color: aqua;
+      }
+      
+      .org .logo img{
+        float: left;
+        position: absolute;
+        top: 5%;
+        left: 10%;
+        width: 200px;
+        height: auto;
+      }
+      
+      
+      .title1{
+        font-size: xx-large;
+        position: absolute;
+        top: 6pc;
+        left: 50%;
+        
+        transform: translate(-50%,-50%);
+      }
+      
+      .org{
+        left: 10%;
+        right: 10%;
+      }
+</style>
+</html>

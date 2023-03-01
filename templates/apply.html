@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+</head>
+<body>
+    <header>
+        <div class="title1">
+            <h1>PESU Student's Job Portal</h1>
+        </div>
+        <div class="org">
+
+            <div class="logo">
+               <img src="static/logo/logo.png" alt=""> 
+            </div>
+            <ul>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/st">Student</a></li>
+                <li><a href="/l">Lecturer</a></li>
+                <li><a href="/j">Jobs</a></li>
+
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+    </header>
+    <div>
+      <h1>Welcome {{username}}
+      <a href = "{{url_for('logout')}}">Logout</a></h1>
+  </div>
+    <div class = "first">
+    {% if details1 %}           
+    {% for e in details1 %}
+    <div class="wrapper">
+        <div class="form-container">
+                <div class="form-inner">
+                       
+                     <h1>Job Title:  {{e[2]}}</h1>
+                     <h2>Job id:  {{e[0]}}</h2>
+                     <h2>Company id:  {{e[5]}}</h2>
+                     <h3><b>Description:</b></h3> <div class = "t1">  {{e[1]}}</div>
+                     <h3><b>CTC:</b></h3> <div class = "t1">{{e[4]}}</div>
+                     <h3><b>Vacancy:</b></h3> <div class = "t1">{{e[3]}} </div>
+                     <h2><b>Eligibility: </b></h2>
+                     <h3>10th Percentage:</h3>  {{e[7]}}
+                     <h3>12th Percentage:</h3>  {{e[8]}}
+                     <h3><b>CGPA: </b></h3> <div class = "t1">  {{e[6]}}</div>
+                     <h3><b>Backlogs:</b></h3> <div class = "t1">{{e[9]}}</div>
+                     
+                </div>
+            </div>
+            
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
+    {% endfor %}
+    {% endif %}
+    </div>
+    <div class = "forms">
+    <form action = "/j_ap" method = 'POST'>
+      <div class="field">
+        <input type="text" placeholder="SRN" name = "SRN" required>
+     </div>
+   
+     <div class="field">
+        <input type="text" placeholder="JOB ID" name = "jid" required>
+     </div>
+     <div> <button class="button-9" role="button" type = "submit">Apply</button></div>
+     <form>
+      <div class = "message">{{msg}}</div>
+     </div>
+</body>
+<style>
+    .first{
+        position:relative;
+        top: 12pc;
+        padding: 70px;
+    }
+    .t1{
+        font-size:1.5pc;
+    }
+    .message{
+      position:relative;
+      bottom:1pc;
+      font-size:1.5pc;
+
+    }
+    .wrapper{
+        padding: 15px;
+  border-radius: 5px;
+  box-shadow: 20px 20px 20px 25px rgba(0,0,0,0.1);
+    }
+    .org ul{
+        position: absolute;
+        float: right;
+        top: 20%;
+        right: 5%;
+        list-style-type: none;
+        margin-top: 25px;
+      }
+      
+      .org ul li{
+        display: inline-block;
+      }
+      ul li a{
+        text-decoration: none;
+        color: black;
+        padding: 5px 20px;
+        border: 1px solid black;
+      }
+      
+      .org ul li a:hover{
+        background-color: black;
+        color: aqua;
+        transition: 0.6s ease;
+      }
+      
+      .org ul li.active a{
+        background-color: black;
+        color: aqua;
+      }
+      
+      .org .logo img{
+        float: left;
+        position: absolute;
+        top: 8%;
+        left: 10%;
+        width: 200px;
+        height: auto;
+      }
+      
+      
+      .title1{
+        font-size: xx-large;
+        position: absolute;
+        top: 8pc;
+        left: 50%;
+        
+        transform: translate(-50%,-50%);
+      }
+      
+      .org{
+        left: 10%;
+        right: 10%;
+      }
+      .button-9 {
+        left:65%;
+        
+        appearance: button;
+        backface-visibility: hidden;
+        background-color: #405cf5;
+        border-radius: 6px;
+        border-width: 0;
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+        font-size: xx-large;
+        height: 50px;
+        line-height: 1.15;
+        margin: 12px 0 0;
+        outline: none;
+        overflow: hidden;
+        padding: 0 25px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        transform: translateZ(0);
+        transition: all .2s,box-shadow .08s ease-in;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 25%;
+      }
+      
+      .button-9:disabled {
+        cursor: default;
+      }
+      
+      .button-9:focus {
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+      }
+       .field{
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+        
+      }
+      .field input{
+        height: 100%;
+        width: 50%;
+        outline: none;
+        padding-left: 15px;
+        border-radius: 5px;
+        border: 1px solid lightgrey;
+        border-bottom-width: 2px;
+        font-size: 17px;
+        transition: all 0.3s ease;
+      }
+      .field input:focus{
+        border-color: #fc83bb;
+        /* box-shadow: inset 0 0 3px #fb6aae; */
+      }
+       .field input::placeholder{
+        color: #999;
+        transition: all 0.3s ease;
+      }
+      .field input:focus::placeholder{
+        color: #b3b3b3;
+      }
+      .forms{
+        position:relative;
+        left:10pc;
+        top:5pc;  
+        border: 1px solid black;
+        width: 50%;
+        padding: 20px;
+        height: 200px;
+        bottom:10%;
+      }
+</style>
+</html>

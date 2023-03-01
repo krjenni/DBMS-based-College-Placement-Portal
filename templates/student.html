@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+
+      <meta charset="utf-8">
+      <div class="title1">
+        <h1>PESU Student's Job Portal</h1>
+    </div>
+    <div class="org">
+
+        <div class="logo">
+           <img src="static/logo/logo.png" alt=""> 
+        </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li  class="active"><a href="/st">Student</a></li>
+            <li><a href="/l">Lecturer</a></li>
+            <li><a href="/j">Jobs</a></li>
+
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+      <title>Login and Registration Form in HTML | CodingNepal</title>
+      <link rel="stylesheet" href="static/student_style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Login 
+            </div>
+           
+         </div>
+         <div>{{msg}}</div>
+         <div class="form-container">
+            
+               
+            </div>
+            <div class="form-inner">
+               <form action="/st_suc" method = "POST" class="login">
+                  <div class="field">
+                     <input type="text" placeholder="SRN" name = "SRN" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" name = "password" required>
+                  </div>
+                  
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">
+                     Not a member? <a href="/sr">Signup now</a>
+                  </div>
+              
+            </div>
+         </div>
+      </div>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+   </body>
+   <style>
+      .first{
+         position:relative;
+         top: 12pc;
+         padding: 70px;
+     }
+     .last{
+       position:relative;
+ 
+       top:15pc;
+       left: 5pc;
+     }
+     .t1{
+         font-size:1.5pc;
+     }
+     .wrapper{
+         padding: 15px;
+   border-radius: 5px;
+   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+     }
+     .org ul{
+         position: absolute;
+         float: right;
+         top: 20%;
+         right: 5%;
+         list-style-type: none;
+         margin-top: 25px;
+       }
+       
+       .org ul li{
+         display: inline-block;
+       }
+       ul li a{
+         text-decoration: none;
+         color: black;
+         padding: 5px 20px;
+         border: 1px solid black;
+       }
+       
+       .org ul li a:hover{
+         background-color: black;
+         color: aqua;
+         transition: 0.6s ease;
+       }
+       
+       .org ul li.active a{
+         background-color: black;
+         color: aqua;
+       }
+       
+       .org .logo img{
+         float: left;
+         position: absolute;
+         top: 5%;
+         left: 10%;
+         width: 200px;
+         height: auto;
+       }
+       
+       
+       .title1{
+         font-size: xx-large;
+         position: absolute;
+         top: 6pc;
+         left: 50%;
+         
+         transform: translate(-50%,-50%);
+       }
+       
+       .org{
+         left: 10%;
+         right: 10%;
+       }
+   </style>
+</html>

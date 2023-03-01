@@ -1,0 +1,53 @@
+
+.org ul{
+    position: absolute;
+    float: right;
+    top: 20%;
+    right: 5%;
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+.org ul li{
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 20px;
+    border: 1px solid black;
+}
+
+.org ul li a:hover{
+    background-color: black;
+    color: aqua;
+    transition: 0.6s ease;
+}
+
+.org ul li.active a{
+    background-color: black;
+    color: aqua;
+}
+
+.org .logo img{
+    float: left;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 200px;
+    height: auto;
+}
+
+
+ .title1{
+    font-size: xx-large;
+    position: relative;
+    left: 30%;
+    
+    transform: translate(-50%,-50%);
+}
+
+.org{
+    left: 10%;
+    right: 10%;
+}
